@@ -1,0 +1,29 @@
+.search-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    min-height: 50px;
+    background-color: #333333;
+    font-size: 20px;
+    color: rgb(243, 243, 243);
+}
+
+.liked-only-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-button {
+    border: none;
+    outline: 2px solid white;
+    outline-offset: 2px;
+    opacity: 0.9;
+    width: 27px;
+    height: 27px;
+    background: transparent url('../../assets/add-icon.svg') center no-repeat;
+    background-size: 22px 22px;
+}

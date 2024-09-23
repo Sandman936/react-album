@@ -1,0 +1,43 @@
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.create-button {
+    padding: 10px;
+    background-color: #537be7;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    transition: background-color 0.5s ease;
+}
+
+.create-button:hover {
+    background-color: #3b56a0;
+}
+
+.create-button:disabled {
+    background-color: #191d29;
+}
+
+.create-input {
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
+    background-color: #f1f1f1;
+    color: #202020;
+    border-color: #537be7;
+    border-radius: 10px;
+}
+
+.create-input::placeholder {
+    font-size: 25px;
+    color: #858585;
+}
+
+.error-text {
+    color: #ff1b1b;
+}
