@@ -3,7 +3,7 @@
 Ссылка на сайт - [GitHub Pages](https://sandman936.github.io/react-album/)
 
 ## Используемые технологии:
-* React, Redux toolkit, Hook form, Router DOM.
+* React, Redux toolkit, Router DOM, Hook form.
 * Typescript.
 * Normalize.css
 
