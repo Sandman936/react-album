@@ -1,5 +1,5 @@
 import { baseURL } from "../constants/constants";
-import { cardImage, cardItem } from "./types";
+import { CardImage, CardItem } from "./types";
 
 const checkResponse = <T>(res: Response): Promise<T> =>
   res.ok 
@@ -9,7 +9,7 @@ const checkResponse = <T>(res: Response): Promise<T> =>
 
 export const getProductImagesApi = () =>
   fetch(`${baseURL}/photos?_limit=15`)
-    .then((res) => checkResponse<cardImage[]>(res))
+    .then((res) => checkResponse<CardImage[]>(res))
     .then((data) => {
       if (data) {
         return data;
@@ -19,7 +19,7 @@ export const getProductImagesApi = () =>
 
 export const getProductDataApi = () =>
   fetch(`${baseURL}/posts?_limit=15`)
-    .then((res) => checkResponse<cardItem[]>(res))
+    .then((res) => checkResponse<CardItem[]>(res))
     .then((data) => {
       if (data) {
         return data;
