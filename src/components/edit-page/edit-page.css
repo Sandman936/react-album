@@ -46,3 +46,14 @@
 .error-text {
     color: #ff1b1b;
 }
+
+.back-button {
+    border: none;
+    opacity: 0.85;
+    inset-inline: 30px;
+    inset-block: 30px;
+    width: 48px;
+    height: 48px;
+    background: transparent url('../../assets/Back-arrow.png') center no-repeat;
+    background-size: 48px 48px;
+}

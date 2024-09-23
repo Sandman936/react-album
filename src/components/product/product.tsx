@@ -32,6 +32,7 @@ const Product = () => {
           </div>
           <p className="text-main">{body}</p>
         </div>
+        <Link to={`/products/edit/${currentTabId}`}><button type='button' className='button create-button'>Редактировать</button></Link>
       </div>
     </main>
   );

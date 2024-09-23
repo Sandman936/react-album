@@ -6,6 +6,7 @@ import { useDispatch } from '../../services/store'
 import { getProductData, getProductImages } from '../../services/thunks'
 import Product from '../product/product'
 import CreatePage from '../create-page/create-page'
+import EditPage from '../edit-page/edit-page'
 
 const App: FC = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ const App: FC = () => {
       <Route path="/products" element={<Products />} />
       <Route path="/products/:id" element={<Product />} />
       <Route path="/create-product" element={<CreatePage />} />
+      <Route path="/products/edit/:id" element={<EditPage />} />
     </Routes>
   );
 }

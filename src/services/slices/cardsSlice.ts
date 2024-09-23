@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CardImage, CardItem, CreateFormFields, RequestStatus } from "../../utils/types";
+import { CardImage, CardItem, CreateFormFields, EditFormFields, RequestStatus } from "../../utils/types";
 import { getProductData, getProductImages} from "../thunks";
 import { createArrayFromData } from "../../utils/createArrayFromData";
 
@@ -42,6 +42,15 @@ export const cardsSlice = createSlice({
             height: 0,
           });
         },
+        editCard(state: cardsState, action: PayloadAction<EditFormFields>) {
+          state.data.forEach((product) => {
+            if (product.id === action.payload.id) {
+              product.title = action.payload.title;
+              product.body = action.payload.description;
+              product.url = action.payload.url;
+            }
+          });
+        },
     },
     extraReducers(builder) {
         builder
@@ -75,4 +84,4 @@ export const cardsSlice = createSlice({
 });
 
 export const {cardsDataSelector, cardsStatusSelector} = cardsSlice.selectors;
-export const {deleteCard, toggleLikeOnCard, addNewCard} = cardsSlice.actions
+export const {deleteCard, toggleLikeOnCard, addNewCard, editCard} = cardsSlice.actions

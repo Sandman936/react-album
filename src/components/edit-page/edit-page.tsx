@@ -1,30 +1,43 @@
-import { Link } from 'react-router-dom';
-import './create-page.css'
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import './edit-page.css'
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { CreateFormFields } from '../../utils/types';
-import { useDispatch } from '../../services/store';
-import { addNewCard } from '../../services/slices/cardsSlice';
+import { EditFormFields } from '../../utils/types';
+import { useDispatch, useSelector } from '../../services/store';
+import { cardsDataSelector, editCard } from '../../services/slices/cardsSlice';
 
-const CreatePage = () => {
+const EditPage = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
+  const location = useLocation();
+  const currentTabId = location.pathname.toString().replace(/\D/g, '');
+  const productsDataArray = useSelector(cardsDataSelector);
+  const currentProductData = productsDataArray.filter((item) => item.id === +currentTabId);
+
+  if (currentProductData.length === 0) {
+    navigate('/products/');
+  }
+
+  const {title, body, url, id } = currentProductData[0];
 
   const {
     register,
     handleSubmit,
     setError,
     formState: { errors, isSubmitting },
-    reset,
-  } = useForm<CreateFormFields>();
+  } = useForm<EditFormFields>({
+    defaultValues: {
+      id: id,
+      title: `${title}`,
+      description: `${body}`,
+      url: `${url}`
+    }
+  });
 
-  const submit: SubmitHandler<CreateFormFields> = async (data) => {
+  const submit: SubmitHandler<EditFormFields> = async (data) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000)); //Имитация ожидания ответа от сервера
-      dispatch(addNewCard(data));
-      reset({
-        title: "",
-        description: "",
-        url: "",
-      });
+      dispatch(editCard(data))
+      navigate(`/products/${currentTabId}`)
     } catch (error) {
       setError("root", {
         message: `Ошибка: ${error}`,
@@ -35,45 +48,44 @@ const CreatePage = () => {
   return (
     <main>
       <div className="title-block">
-        <Link to={"/products"} className="link" aria-label="Вернуться к продуктам">
-          <button type="button" className="button home-button"></button>
+        <Link to={`/products/${currentTabId}`} className="link" aria-label="Вернуться к продукту">
+          <button type="button" className="button back-button"></button>
         </Link>
-        <h2 className="title-main">Создание продукта</h2>
+        <h2 className="title-main">Редактирование продукта</h2>
       </div>
       <div className="container">
         <form className="form-wrapper" onSubmit={handleSubmit(submit)}>
+          <label className='text'>Название продукта</label>
           <input
             className="create-input"
             placeholder="Название продукта"
             type="text"
             {...register("title", {
-              required: "Укажите название",
               minLength: { value: 3, message: "Слишком короткое название" },
-              maxLength: { value: 25, message: "Слишком длинное название" },
+              maxLength: { value: 100, message: "Слишком длинное название" },
             })}
           />
           {errors.title && (
             <span className="error-text">{errors.title.message}</span>
           )}
+          <label className='text'>Описание продукта</label>
           <textarea
             className="create-input desc-input"
             placeholder="Описание продукта"
             {...register("description", {
-              required: "Укажите описание продукта",
               minLength: { value: 3, message: "Слишком короткое описание" },
-              maxLength: { value: 70, message: "Слишком длинное описание" },
+              maxLength: { value: 300, message: "Слишком длинное описание" },
             })}
           />
           {errors.description && (
             <span className="error-text">{errors.description.message}</span>
           )}
+          <label className='text'>Ссылка на картинку продукта</label>
           <input
             className="create-input"
             placeholder="Адрес картинки"
             type="text"
-            {...register("url", {
-              required: "Вставте ссылку на изображение",
-            })}
+            {...register("url")}
           />
           {errors.url && (
             <span className="error-text">{errors.url.message}</span>
@@ -83,7 +95,7 @@ const CreatePage = () => {
             type="submit"
             className="button create-button"
           >
-            {isSubmitting ? "Создаем..." : "Создать"}
+            {isSubmitting ? "Ожидание..." : "Готово"}
           </button>
           {errors.root && (
             <span className="error-text">{errors.root.message}</span>
@@ -94,4 +106,4 @@ const CreatePage = () => {
   );
 };
 
-export default CreatePage;
+export default EditPage;

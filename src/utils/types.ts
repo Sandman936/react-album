@@ -23,3 +23,10 @@ export type CreateFormFields = {
     description: string;
     url: string;
 }
+
+export type EditFormFields = {
+    id: number;
+    title: string;
+    description: string;
+    url: string;
+}

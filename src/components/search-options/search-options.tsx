@@ -20,12 +20,19 @@ const SearchOptions = (props: SearchOptionsProps) => {
         />
         <label htmlFor="likedOnly">Показать только понравившиеся</label>
       </div>
-      <div className='search-value'>
+      <div className="search-value">
         <label>Поиск:</label>
-        <input type="search" className='search-input' onChange={handleOnSearch}/>
+        <input
+          type="search"
+          className="search-input"
+          onChange={handleOnSearch}
+        />
       </div>
       <Link className="link" to={"/create-product"}>
-        <button className="button add-button" />
+        <div className="add-container">
+          <label className='button'>Добавить продукт</label>
+          <button className="button add-button" />
+        </div>
       </Link>
     </div>
   );
