@@ -1,6 +1,6 @@
 # React Album
 
-Ссылка на сайт - [GitHub Pages](https://sandman936.github.io/react-album/)
+Ссылка на страницу [GitHub Pages](https://sandman936.github.io/react-album/)
 
 ## Используемые технологии:
 * React, Redux toolkit, Router DOM, Hook form.
