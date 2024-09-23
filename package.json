@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://sandman936.github.io/react-album/",
+  "homepage": "https://sandman936.github.io/react-album",
   "scripts": {
     "start": "vite",
     "build": "tsc -b && vite build",
