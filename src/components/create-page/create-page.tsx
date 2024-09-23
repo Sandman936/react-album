@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './create-page.css'
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { CreateFormFields } from '../../utils/types';
@@ -7,6 +7,7 @@ import { addNewCard } from '../../services/slices/cardsSlice';
 
 const CreatePage = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const {
     register,
@@ -25,6 +26,7 @@ const CreatePage = () => {
         description: "",
         url: "",
       });
+      navigate('/products/');
     } catch (error) {
       setError("root", {
         message: `Ошибка: ${error}`,
