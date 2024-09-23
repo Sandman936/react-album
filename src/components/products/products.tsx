@@ -13,21 +13,28 @@ const Products = () => {
   const isProductsLoading = loadingProductsStatus !== "Success";
 
   const [likedOnly, setLikedOnly] = useState<boolean>(false);
+  const [searchValue, setSearchValue] = useState<string>('');
 
-  const productsArray = likedOnly ? productsDataArray.filter((product) => product.isLiked === true) : productsDataArray;
+  const filteredProductsArray = searchValue ? productsDataArray.filter((product) => product.title.toLowerCase().includes(searchValue)) : productsDataArray;
+
+  const likedProductsArray = likedOnly ? filteredProductsArray.filter((product) => product.isLiked === true) : filteredProductsArray;
   
   const handleLikedOnlyChange = () => {
     setLikedOnly(!likedOnly);
   }
 
+  const handleOnSearchChange = (e : React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.currentTarget.value);
+  }
+
   return (
     <main>
-      <SearchOptions likedOnlyState={likedOnly} handleLikedOnly={handleLikedOnlyChange}/>
+      <SearchOptions handleOnSearch={handleOnSearchChange} handleLikedOnly={handleLikedOnlyChange} />
       <div className="container">
         {isProductsLoading ? (
           <Preloader />
         ) : (
-          productsArray.map((cardItem) => (
+          likedProductsArray.map((cardItem) => (
             <Card
               id={cardItem.id}
               url={cardItem.url}
@@ -44,7 +51,7 @@ const Products = () => {
             />
           ))
         )}
-        {productsArray.length === 0 && (<p className="text-main">По данному фильтру не найдено ни одного товара</p>)}
+        {(likedProductsArray.length === 0 && !isProductsLoading) && (<p className="text-main">По данному фильтру не найдено ни одного товара</p>)}
       </div>
     </main>
   );

@@ -8,7 +8,7 @@ import store from './services/store'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/react-album'>
       <Provider store={store}>
         <App />
       </Provider>

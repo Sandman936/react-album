@@ -27,3 +27,14 @@
     background: transparent url('../../assets/add-icon.svg') center no-repeat;
     background-size: 22px 22px;
 }
+
+.search-value {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-input {
+    font-size: 25px;
+    height: 30px;
+}
