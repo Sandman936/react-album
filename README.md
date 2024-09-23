@@ -5,7 +5,7 @@
 ## Используемые технологии:
 * React, Redux toolkit, Router DOM, Hook form.
 * Typescript.
-* Normalize.css
+* Библиотека Normalize.css
 
 ## Основной функционал:
 1. Получение данных с сервера и создание на основе этих данных альбома с карточками.
