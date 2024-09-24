@@ -31,7 +31,7 @@ const ProductsPage = () => {
     setCurrentPage(1);
   }
 
-  const currentProductsArray = calculatePagination(
+  const currentPageArray = calculatePagination(
     currentPage,
     filteredProducts
   );
@@ -55,7 +55,7 @@ const ProductsPage = () => {
         {isProductsLoading ? (
           <Preloader />
         ) : (
-          <Products cardsArray={currentProductsArray} />
+          <Products cardsArray={currentPageArray} />
         )}
         {(filteredProducts.length === 0 && !isProductsLoading) && (<p className="text-main">По данному фильтру не найдено ни одного товара</p>)}
       </div>
