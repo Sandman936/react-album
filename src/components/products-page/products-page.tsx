@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { cardsDataSelector, cardsStatusSelector } from "../../services/slices/cardsSlice";
 import { useSelector } from "../../services/store";
 import { Preloader } from "../preloader/preloader";
@@ -19,11 +19,13 @@ const ProductsPage = () => {
   const [searchValue, setSearchValue] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  const filteredProducts = getFilteredProducts({
-    likedOnlyState: likedOnly,
-    searchValueState: searchValue,
-    productsArray: productsDataArray,
-  });
+  const filteredProducts = useMemo(() => {
+    return getFilteredProducts({
+      likedOnlyState: likedOnly,
+      searchValueState: searchValue,
+      productsArray: productsDataArray,
+    });
+  }, [likedOnly, searchValue, productsDataArray]);
 
   if (filteredProducts.length <= 10 && currentPage !== 1) {
     setCurrentPage(1);
