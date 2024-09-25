@@ -3,9 +3,10 @@
 Ссылка на страницу [GitHub Pages](https://sandman936.github.io/react-album/)
 
 ## Используемые технологии:
-* React, Redux toolkit, Router DOM, Hook form.
+* React, Redux toolkit, Router DOM.
+* Препроцессор - SASS.
 * Typescript.
-* Библиотека Normalize.css
+* Библиотека Normalize.css, Hook form.
 
 ## Основной функционал:
 1. Получение данных с сервера и создание на основе этих данных альбома с карточками.
