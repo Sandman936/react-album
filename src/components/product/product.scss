@@ -1,3 +1,5 @@
+@use '../../index';
+
 .title-block {
     display: flex;
     justify-content: flex-start;
@@ -12,7 +14,7 @@
 }
 
 .title-main {
-    font-size: 36px;
+    font-size: index.$font-size-title;
     color: rgb(39, 39, 39);
     text-align: center;
     white-space: nowrap;
@@ -31,7 +33,7 @@
 }
 
 .text-main {
-    font-size: 26px;
+    font-size: index.$font-size-ineractive;
     text-align: start;
 }
 

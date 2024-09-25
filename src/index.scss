@@ -1,0 +1,12 @@
+@import "normalize.css";
+
+$font-main: Fira Sans, sans-serif;
+$font-size-title: 36px;
+$font-size-ineractive: 25px;
+$font-size-secondary: 20px;
+$font-size-text: 18px;
+
+body {
+    font: 100% $font-main;
+    background-color: #e0e0e0;
+}

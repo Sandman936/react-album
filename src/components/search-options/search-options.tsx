@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './search-options.css'
+import './search-options.scss'
 
 type SearchOptionsProps = {
     handleOnSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;

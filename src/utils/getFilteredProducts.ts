@@ -9,8 +9,6 @@ type GetFilteredProductsProps = {
 const getFilteredProducts = (props: GetFilteredProductsProps) => {
   const { likedOnlyState, searchValueState, productsArray} = props;
 
-  console.log("Сортировка отработала");
-
   const likedProductsArray = likedOnlyState
     ? productsArray.filter((product) => product.isLiked === true)
     : productsArray;

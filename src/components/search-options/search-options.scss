@@ -1,3 +1,5 @@
+@use '../../index';
+
 .search-options {
     display: flex;
     justify-content: space-evenly;
@@ -7,7 +9,7 @@
     border-top-right-radius: 10px;
     min-height: 50px;
     background-color: #333333;
-    font-size: 20px;
+    font-size: index.$font-size-secondary;
     color: rgb(243, 243, 243);
 }
 
@@ -35,7 +37,7 @@
 }
 
 .search-input {
-    font-size: 25px;
+    font-size: index.$font-size-ineractive;
     height: 30px;
 }
 

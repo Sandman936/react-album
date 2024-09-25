@@ -1,3 +1,5 @@
+@use '../../index';
+
 .card {
     display: flex;
     flex-direction: column;
@@ -38,7 +40,7 @@
 }
 
 .title {
-    font-size: 20px;
+    font-size: index.$font-size-secondary;
     margin: 0 0 10px 0;
     color: #4b4343;
     white-space: nowrap;
@@ -49,7 +51,7 @@
 .text {
     margin: 0;
     color: #4b4343;
-    font-size: 18px;
+    font-size: index.$font-size-text;
     text-overflow: ellipsis;
     -webkit-line-clamp: 4;
     line-clamp: 4;

@@ -1,3 +1,5 @@
+@use '../../index';
+
 .pagination-wrapper {
     display: flex;
     justify-content: center;
@@ -11,5 +13,5 @@
 
 .pagination-button {
     padding: 5px 10px;
-    font-size: 16px;
+    font-size: index.$font-size-ineractive;
 }

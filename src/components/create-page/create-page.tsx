@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import './create-page.css'
+import './create-page.scss'
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { CreateFormFields } from '../../utils/types';
 import { useDispatch } from '../../services/store';

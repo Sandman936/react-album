@@ -1,5 +1,5 @@
 import { FC } from "react"
-import './card.css'
+import './card.scss'
 import { Link } from "react-router-dom";
 
 type cardProps = {

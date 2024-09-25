@@ -2,7 +2,7 @@ import { deleteCard, toggleLikeOnCard } from '../../services/slices/cardsSlice';
 import { useDispatch } from '../../services/store';
 import { CardItem } from '../../utils/types';
 import Card from '../card/card';
-import './products.css'
+import './products.scss'
 
 type productsProps = {
     cardsArray: CardItem[],

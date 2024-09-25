@@ -3,11 +3,12 @@ import { cardsDataSelector, cardsStatusSelector } from "../../services/slices/ca
 import { useSelector } from "../../services/store";
 import { Preloader } from "../preloader/preloader";
 import SearchOptions from "../search-options/search-options";
-import './products-page.css'
+import './products-page.scss'
 import Products from "../products/products";
 import { Pagination } from "../pagination/pagination";
 import calculatePagination from "../../utils/calculatePagination";
 import getFilteredProducts from "../../utils/getFilteredProducts";
+import { productsPerPage } from "../../constants/constants";
 
 const ProductsPage = () => {
   const loadingProductsStatus = useSelector(cardsStatusSelector);
@@ -27,7 +28,7 @@ const ProductsPage = () => {
     });
   }, [likedOnly, searchValue, productsDataArray]);
 
-  if (filteredProducts.length <= 10 && currentPage !== 1) {
+  if (filteredProducts.length <= productsPerPage && currentPage !== 1) {
     setCurrentPage(1);
   }
 

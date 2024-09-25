@@ -1,3 +1,5 @@
+@use '../../index';
+
 .form-wrapper {
     display: flex;
     flex-direction: column;
@@ -8,7 +10,7 @@
     padding: 15px;
     background-color: #537be7;
     color: #ffffff;
-    font-size: 25px;
+    font-size: index.$font-size-ineractive;
     font-weight: 700;
     border-radius: 10px;
     border: none;
@@ -24,7 +26,7 @@
 }
 
 .create-input {
-    font-size: 25px;
+    font-size: index.$font-size-ineractive;
     padding: 10px;
     text-align: left;
     background-color: #f1f1f1;
@@ -34,7 +36,7 @@
 }
 
 .create-input::placeholder {
-    font-size: 25px;
+    font-size: index.$font-size-ineractive;
     color: #858585;
 }
 
@@ -45,4 +47,15 @@
 
 .error-text {
     color: #ff1b1b;
+}
+
+.back-button {
+    border: none;
+    opacity: 0.85;
+    inset-inline: 30px;
+    inset-block: 30px;
+    width: 48px;
+    height: 48px;
+    background: transparent url('../../assets/Back-arrow.png') center no-repeat;
+    background-size: 48px 48px;
 }

@@ -1,5 +1,5 @@
 import { FC, useEffect } from 'react'
-import './App.css'
+import './App.scss'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import ProductsPage from '../products-page/products-page'
 import { useDispatch } from '../../services/store'

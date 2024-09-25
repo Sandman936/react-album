@@ -1,5 +1,5 @@
 import { productsPerPage } from '../../constants/constants';
-import './pagination.css'
+import './pagination.scss'
 
 type PaginationProps = {
     sumOfProducts: number;

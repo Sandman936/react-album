@@ -1,6 +1,5 @@
-
 import { Link, Navigate, useLocation } from 'react-router-dom';
-import './product.css'
+import './product.scss'
 import { useSelector } from '../../services/store';
 import { cardsDataSelector } from '../../services/slices/cardsSlice';
 
