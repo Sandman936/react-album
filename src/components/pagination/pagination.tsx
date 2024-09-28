@@ -20,7 +20,7 @@ const PaginationList = (props: PaginationProps) => {
       <Pagination
         count={pageNumbersCount}
         size="large"
-        color="secondary"
+        color="primary"
         className="pagination-wrapper"
         onChange={(_e, page) => clickHandler(page)}
         page={currentPage}

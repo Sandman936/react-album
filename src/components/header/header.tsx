@@ -1,6 +1,7 @@
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import HomeIcon from '@mui/icons-material/Home';
 import { Link } from "react-router-dom";
+import "../../components/header/header.scss"
 
 const Header = () => {
   return (
@@ -18,6 +19,7 @@ const Header = () => {
         <Typography variant="h4" component="span">
           React Album
         </Typography>
+        <div className="logo-container" />
       </Toolbar>
     </AppBar>
   );
