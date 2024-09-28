@@ -5,7 +5,7 @@ import { Preloader } from "../preloader/preloader";
 import SearchOptions from "../search-options/search-options";
 import './products-page.scss'
 import Products from "../products/products";
-import { Pagination } from "../pagination/pagination";
+import PaginationList from "../pagination/pagination";
 import calculatePagination from "../../utils/calculatePagination";
 import getFilteredProducts from "../../utils/getFilteredProducts";
 import { productsPerPage } from "../../constants/constants";
@@ -45,8 +45,8 @@ const ProductsPage = () => {
     setSearchValue(e.currentTarget.value);
   };
 
-  const handlePageChange = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
   };
 
   return (
@@ -60,7 +60,7 @@ const ProductsPage = () => {
         )}
         {(filteredProducts.length === 0 && !isProductsLoading) && (<p className="text-main">Не найдено ни одного товара</p>)}
       </section>
-      <Pagination sumOfProducts={filteredProducts.length} clickHandler={handlePageChange} currentPage={currentPage}/>
+      <PaginationList sumOfProducts={filteredProducts.length} clickHandler={handlePageChange} currentPage={currentPage}/>
     </main>
   );
 };

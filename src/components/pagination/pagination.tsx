@@ -1,3 +1,4 @@
+import { Pagination } from '@mui/material';
 import { productsPerPage } from '../../constants/constants';
 import './pagination.scss'
 
@@ -7,30 +8,24 @@ type PaginationProps = {
     clickHandler: (arg0: number) => void;
 }
 
-export const Pagination = (props: PaginationProps) => {
+const PaginationList = (props: PaginationProps) => {
   const { sumOfProducts, clickHandler, currentPage } = props;
-  const pageNumbers = [];
+  const pageNumbersCount = Math.ceil(sumOfProducts / productsPerPage);
 
-  for (let i = 1; i <= Math.ceil(sumOfProducts / productsPerPage); i++) {
-    pageNumbers.push(i);
-  }
-
-  if (pageNumbers.length <= 1) {
-    return null
+  if (pageNumbersCount <= 1) {
+    return null;
   }
 
   return (
-    <div className="pagination-wrapper">
-      {pageNumbers.map((number) => (
-        <button
-          className="button pagination-button"
-          key={number}
-          onClick={() => clickHandler(number)}
-          disabled={currentPage === number}
-        >
-          {number}
-        </button>
-      ))}
-    </div>
+      <Pagination
+        count={pageNumbersCount}
+        size="large"
+        color="secondary"
+        className="pagination-wrapper"
+        onChange={(_e, page) => clickHandler(page)}
+        page={currentPage}
+      />
   );
 };
+
+export default PaginationList;
