@@ -9,13 +9,13 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     min-height: 50px;
-    background-color: #b6b6b6;
+    background-color: #1976d2;
     position: relative;
 }
 
 .title-main {
     font-size: index.$font-size-title;
-    color: rgb(39, 39, 39);
+    color: white;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
@@ -23,7 +23,7 @@
 }
 
 .sub-title-main {
-    font-size: 32px;
+    font-size: index.$font-size-title;
 }
 
 .image-container-main {
@@ -59,4 +59,12 @@
     justify-items: center;
     grid-template-columns: 1fr 2fr;
     gap: 50px;
+}
+
+@media (max-width: 900px) {
+    .info-wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
 }
