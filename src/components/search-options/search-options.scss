@@ -2,7 +2,7 @@
 
 .search-options {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
     border-top-left-radius: 10px;
@@ -30,19 +30,42 @@
     background-size: 22px 22px;
 }
 
+.add-label {
+   cursor: pointer;
+}
+
 .search-value {
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
-.search-input {
-    font-size: index.$font-size-ineractive;
-    height: 30px;
-}
-
 .add-container {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.search-add-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 1280px) {
+    .add-label {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 900px) {
+    .search-options  {
+        flex-direction: column;
+        gap: 20px;
+    }
 }

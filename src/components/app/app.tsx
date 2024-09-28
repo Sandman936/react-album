@@ -7,23 +7,26 @@ import { getProductData, getProductImages } from '../../services/thunks'
 import Product from '../product/product'
 import CreatePage from '../create-page/create-page'
 import EditPage from '../edit-page/edit-page'
+import Header from '../header/header'
 
 const App: FC = () => {
   const dispatch = useDispatch();
 
-  useEffect( () => {
-    dispatch(getProductImages())
-      .then(() => dispatch(getProductData()))
+  useEffect(() => {
+    dispatch(getProductImages()).then(() => dispatch(getProductData()));
   }, [dispatch]);
 
   return (
-    <Routes>
-      <Route path="/" element={<Navigate replace to='/products' />} />
-      <Route path="/products" element={<ProductsPage />} />
-      <Route path="/products/:id" element={<Product />} />
-      <Route path="/create-product" element={<CreatePage />} />
-      <Route path="/products/edit/:id" element={<EditPage />} />
-    </Routes>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Navigate replace to="/products" />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/products/:id" element={<Product />} />
+        <Route path="/create-product" element={<CreatePage />} />
+        <Route path="/products/edit/:id" element={<EditPage />} />
+      </Routes>
+    </>
   );
 }
 

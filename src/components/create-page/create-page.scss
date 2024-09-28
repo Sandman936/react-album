@@ -3,48 +3,6 @@
 .form-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.create-button {
-    padding: 15px;
-    background-color: #537be7;
-    color: #ffffff;
-    font-size: index.$font-size-secondary;
-    font-weight: 700;
-    border-radius: 10px;
-    border: none;
-    transition: background-color 0.5s ease;
-}
-
-.create-button:hover {
-    background-color: #3b56a0;
-}
-
-.create-button:disabled {
-    background-color: #191d29;
-}
-
-.create-input {
-    font-size: index.$font-size-secondary;
-    padding: 10px;
-    text-align: left;
-    background-color: #f1f1f1;
-    color: #202020;
-    border-color: #537be7;
-    border-radius: 10px;
-}
-
-.create-input::placeholder {
-    font-size: index.$font-size-secondary;;
-    color: #858585;
-}
-
-.desc-input {
-    width: 600px;
-    height: 300px;
-}
-
-.error-text {
-    color: #ff1b1b;
+    align-items: center;
+    gap: 20px;
 }

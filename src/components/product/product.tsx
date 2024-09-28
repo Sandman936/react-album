@@ -2,25 +2,25 @@ import { Link, Navigate, useLocation } from 'react-router-dom';
 import './product.scss'
 import { useSelector } from '../../services/store';
 import { cardsDataSelector } from '../../services/slices/cardsSlice';
+import { Button } from '@mui/material';
 
 const Product = () => {
   const location = useLocation();
-  const currentTabId = location.pathname.toString().replace(/\D/g, '');
+  const currentTabId = location.pathname.toString().replace(/\D/g, "");
   const productsDataArray = useSelector(cardsDataSelector);
-  const currentProductData = productsDataArray.filter((item) => item.id === +currentTabId);
+  const currentProductData = productsDataArray.filter(
+    (item) => item.id === +currentTabId
+  );
 
   if (currentProductData.length === 0) {
-    return <Navigate replace to='/products' />
+    return <Navigate replace to="/products" />;
   }
-  
-  const {title, body, url } = currentProductData[0];
+
+  const { title, body, url } = currentProductData[0];
 
   return (
     <main>
       <div className="title-block">
-        <Link to={"/products"} className="link" aria-label="Перейти к странице продуктов">
-          <button type="button" className="button home-button"></button>
-        </Link>
         <h2 className="title-main">Информация о продукте</h2>
       </div>
       <div className="container info">
@@ -31,7 +31,11 @@ const Product = () => {
           </div>
           <p className="text-main">{body}</p>
         </div>
-        <Link to={`/products/edit/${currentTabId}`}><button type='button' className='button create-button'>Редактировать</button></Link>
+        <Link to={`/products/edit/${currentTabId}`}>
+          <Button type="button" variant="contained" size="large">
+            Редактировать
+          </Button>
+        </Link>
       </div>
     </main>
   );

@@ -4,6 +4,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { EditFormFields } from '../../utils/types';
 import { useDispatch, useSelector } from '../../services/store';
 import { cardsDataSelector, editCard } from '../../services/slices/cardsSlice';
+import { Button, Container, TextField } from '@mui/material';
 
 const EditPage = () => {
   const dispatch = useDispatch();
@@ -53,55 +54,58 @@ const EditPage = () => {
         </Link>
         <h2 className="title-main">Редактирование продукта</h2>
       </div>
-      <div className="container">
+      <Container maxWidth="xl" sx={{bgcolor: "menu", p: 5}}>
         <form className="form-wrapper" onSubmit={handleSubmit(submit)}>
-          <label className='text'>Название продукта</label>
-          <input
-            className="create-input"
+          <TextField
+            sx={{width: 400}}
+            error={errors.title ? true : false}
+            label="Название продукта"
             placeholder="Название продукта"
             type="text"
+            helperText={errors.title ? errors.title.message : ''}
             {...register("title", {
               minLength: { value: 3, message: "Слишком короткое название" },
               maxLength: { value: 100, message: "Слишком длинное название" },
             })}
           />
-          {errors.title && (
-            <span className="error-text">{errors.title.message}</span>
-          )}
-          <label className='text'>Описание продукта</label>
-          <textarea
-            className="create-input desc-input"
+          <TextField
+            sx={{width: 400}}
+            error={errors.description ? true : false}
+            label="Описание продукта"
             placeholder="Описание продукта"
+            rows={5}
+            multiline
+            helperText={errors.description ? errors.description.message : ''}
             {...register("description", {
               minLength: { value: 3, message: "Слишком короткое описание" },
               maxLength: { value: 300, message: "Слишком длинное описание" },
             })}
           />
-          {errors.description && (
-            <span className="error-text">{errors.description.message}</span>
-          )}
-          <label className='text'>Ссылка на картинку продукта</label>
-          <input
-            className="create-input"
+          <TextField
+            sx={{width: 400}}
+            error={errors.url ? true : false}
+            label="Адрес картинки"
             placeholder="Адрес картинки"
             type="text"
+            helperText={errors.url ? errors.url.message : ''}
             {...register("url")}
           />
           {errors.url && (
             <span className="error-text">{errors.url.message}</span>
           )}
-          <button
+          <Button
             disabled={isSubmitting}
             type="submit"
-            className="button create-button"
+            variant="contained"
+            size="large"
           >
             {isSubmitting ? "Ожидание..." : "Готово"}
-          </button>
+          </Button>
           {errors.root && (
             <span className="error-text">{errors.root.message}</span>
           )}
         </form>
-      </div>
+      </Container>
     </main>
   );
 };

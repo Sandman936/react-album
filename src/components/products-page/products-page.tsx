@@ -52,14 +52,14 @@ const ProductsPage = () => {
   return (
     <main>
       <SearchOptions handleOnSearch={handleOnSearchChange} handleLikedOnly={handleLikedOnlyChange} />
-      <div className="container">
+      <section className="container">
         {isProductsLoading ? (
           <Preloader />
         ) : (
           <Products cardsArray={currentPageArray} />
         )}
-        {(filteredProducts.length === 0 && !isProductsLoading) && (<p className="text-main">По данному фильтру не найдено ни одного товара</p>)}
-      </div>
+        {(filteredProducts.length === 0 && !isProductsLoading) && (<p className="text-main">Не найдено ни одного товара</p>)}
+      </section>
       <Pagination sumOfProducts={filteredProducts.length} clickHandler={handlePageChange} currentPage={currentPage}/>
     </main>
   );
