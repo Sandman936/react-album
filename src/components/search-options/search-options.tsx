@@ -41,10 +41,10 @@ const SearchOptions = (props: SearchOptionsProps) => {
         <Link
           className="link"
           to={"/create-product"}
-          aria-label="Добавить продукт"
+          aria-label="Добавить страницу"
         >
           <div className="add-container">
-            <label className="add-label">Добавить продукт</label>
+            <label className="add-label">Добавить страницу</label>
             <button className="button add-button" />
           </div>
         </Link>
