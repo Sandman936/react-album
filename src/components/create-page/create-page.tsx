@@ -27,7 +27,7 @@ const CreatePage = () => {
         description: "",
         url: "",
       });
-      navigate('/products/');
+      navigate('/places/');
     } catch (error) {
       setError("root", {
         message: `Ошибка: ${error}`,
@@ -38,15 +38,15 @@ const CreatePage = () => {
   return (
     <main>
       <div className="title-block">
-        <h2 className="title-main">Создание продукта</h2>
+        <h2 className="title-main">Создание альбомной страницы</h2>
       </div>
       <Container maxWidth="xl" sx={{bgcolor: "menu", p: 5, m: 0}}>
         <form className="form-wrapper" onSubmit={handleSubmit(submit)}>
           <TextField
             sx={{width: 400}}
             error={errors.title ? true : false}
-            label="Название продукта"
-            placeholder="Название продукта"
+            label="Название страницы"
+            placeholder="Название страницы"
             type="text"
             helperText={errors.title ? errors.title.message : ''}
             {...register("title", {
@@ -58,13 +58,13 @@ const CreatePage = () => {
           <TextField
             sx={{width: 400}}
             error={errors.description ? true : false}
-            label="Описание продукта"
-            placeholder="Описание продукта"
+            label="Описание страницы"
+            placeholder="Описание страницы"
             rows={5}
             multiline
             helperText={errors.description ? errors.description.message : ''}
             {...register("description", {
-              required: "Укажите описание продукта",
+              required: "Укажите описание страницы",
               minLength: { value: 3, message: "Слишком короткое описание" },
               maxLength: { value: 70, message: "Слишком длинное описание" },
             })}

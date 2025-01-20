@@ -9,7 +9,7 @@ const Header = () => {
       <Toolbar>
         <IconButton sx={{ mr: 3 }}>
           <Link
-            to={"/products"}
+            to={"/places"}
             aria-label="Перейти к странице продуктов"
             className="link"
           >

@@ -1,18 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CardImage, CardItem, CreateFormFields, EditFormFields, RequestStatus } from "../../utils/types";
-import { getProductData, getProductImages} from "../thunks";
-import { createArrayFromData } from "../../utils/createArrayFromData";
+import { CardItem, CreateFormFields, EditFormFields, RequestStatus } from "../../utils/types";
+import { getProductData } from "../thunks";
 
 interface cardsState {
     data: CardItem[];
-    images: CardImage[];
     status: RequestStatus;
     error: string | undefined;
 }
 
 export const initialState:cardsState = {
     data: [],
-    images: [],
     status: RequestStatus.Idle,
     error: undefined
 }
@@ -54,17 +51,6 @@ export const cardsSlice = createSlice({
     },
     extraReducers(builder) {
         builder
-          .addCase(getProductImages.pending, (state) => {
-            state.status = RequestStatus.Loading;
-          })
-          .addCase(getProductImages.rejected, (state, action) => {
-            state.status = RequestStatus.Rejected;
-            state.error = action.error.message
-          })
-          .addCase(getProductImages.fulfilled, (state, action: PayloadAction<CardImage[]>) => {
-            state.status = RequestStatus.Success;
-            state.images = action.payload;
-          })
           .addCase(getProductData.pending, (state) => {
             state.status = RequestStatus.Loading;
           })
@@ -72,9 +58,9 @@ export const cardsSlice = createSlice({
             state.status = RequestStatus.Rejected;
             state.error = action.error.message
           })
-          .addCase(getProductData.fulfilled, (state, action: PayloadAction<Partial<CardItem>[]>) => {
+          .addCase(getProductData.fulfilled, (state, action: PayloadAction<CardItem[]>) => {
             state.status = RequestStatus.Success;
-            state.data = createArrayFromData(action.payload, state.images);
+            state.data = action.payload;
           });
     },
     selectors: {

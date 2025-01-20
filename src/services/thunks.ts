@@ -1,12 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getProductDataApi, getProductImagesApi} from "../utils/api";
-
-export const getProductImages = createAsyncThunk(
-    'cards/images',
-    async () => getProductImagesApi()
-)
+import { getProductDataApi } from "../utils/api";
 
 export const getProductData = createAsyncThunk(
-    'cards/text',
+    'cards',
     async () => getProductDataApi()
 )

@@ -15,7 +15,7 @@ const EditPage = () => {
   const currentProductData = productsDataArray.filter((item) => item.id === +currentTabId);
 
   if (currentProductData.length === 0) {
-    navigate('/products/');
+    navigate('/places/');
   }
 
   const {title, body, url, id } = currentProductData[0];
@@ -38,7 +38,7 @@ const EditPage = () => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000)); //Имитация ожидания ответа от сервера
       dispatch(editCard(data))
-      navigate(`/products/${currentTabId}`)
+      navigate(`/place/${currentTabId}`)
     } catch (error) {
       setError("root", {
         message: `Ошибка: ${error}`,
@@ -49,18 +49,18 @@ const EditPage = () => {
   return (
     <main>
       <div className="title-block">
-        <Link to={`/products/${currentTabId}`} className="link" aria-label="Вернуться к продукту">
+        <Link to={`/place/${currentTabId}`} className="link" aria-label="Вернуться к продукту">
           <button type="button" className="button back-button"></button>
         </Link>
-        <h2 className="title-main">Редактирование продукта</h2>
+        <h2 className="title-main">Редактирование альбомной страницы</h2>
       </div>
       <Container maxWidth="xl" sx={{bgcolor: "menu", p: 5}}>
         <form className="form-wrapper" onSubmit={handleSubmit(submit)}>
           <TextField
             sx={{width: 400}}
             error={errors.title ? true : false}
-            label="Название продукта"
-            placeholder="Название продукта"
+            label="Название страницы"
+            placeholder="Название страницы"
             type="text"
             helperText={errors.title ? errors.title.message : ''}
             {...register("title", {
@@ -71,8 +71,8 @@ const EditPage = () => {
           <TextField
             sx={{width: 400}}
             error={errors.description ? true : false}
-            label="Описание продукта"
-            placeholder="Описание продукта"
+            label="Описание страницы"
+            placeholder="Описание страницы"
             rows={5}
             multiline
             helperText={errors.description ? errors.description.message : ''}

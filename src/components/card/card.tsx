@@ -30,7 +30,7 @@ const Card: FC<cardProps> = (props: cardProps) => {
         />
 
       <Link
-        to={`/products/${id}`}
+        to={`/place/${id}`}
         className="link"
         aria-label="Перейти к товару"
       >

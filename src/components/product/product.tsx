@@ -13,7 +13,7 @@ const Product = () => {
   );
 
   if (currentProductData.length === 0) {
-    return <Navigate replace to="/products" />;
+    return <Navigate replace to="/places" />;
   }
 
   const { title, body, url } = currentProductData[0];
@@ -21,7 +21,7 @@ const Product = () => {
   return (
     <main>
       <div className="title-block">
-        <h2 className="title-main">Информация о продукте</h2>
+        <h2 className="title-main">Информация о фотографии</h2>
       </div>
       <div className="container info">
         <h3 className="sub-title-main">{title}</h3>
@@ -31,7 +31,7 @@ const Product = () => {
           </div>
           <p className="text-main">{body}</p>
         </div>
-        <Link to={`/products/edit/${currentTabId}`}>
+        <Link to={`/place/edit/${currentTabId}`}>
           <Button type="button" variant="contained" size="large">
             Редактировать
           </Button>

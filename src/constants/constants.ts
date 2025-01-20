@@ -1,3 +1,3 @@
 export const baseURL = 'https://jsonplaceholder.typicode.com';
-export const productsCount = 19;
-export const productsPerPage = 8;
+export const productsCount = 20;
+export const productsPerPage = 9;
