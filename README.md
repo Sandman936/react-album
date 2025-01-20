@@ -6,7 +6,7 @@
 * React, Redux toolkit, Router DOM.
 * Препроцессор - SASS.
 * Typescript.
-* Библиотека Normalize.css, Hook form.
+* Библиотека Hook form.
 * MUI toolkit.
 
 ## Основной функционал:
