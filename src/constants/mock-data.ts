@@ -3,7 +3,7 @@ import { CardItem } from "../utils/types";
 export const mockCards: CardItem[] = [
   {
     id: 1,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_1_IS.jpg",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Red_Square_-_Moscow_2024.jpg/330px-Red_Square_-_Moscow_2024.jpg",
     width: 120,
     height: 120,
     title: "Красная площадь",
@@ -12,7 +12,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 2,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_2_IS.jpg",
+    url: "https://um.mos.ru/_next/image/?url=https%3A%2F%2Fum.mos.ru%2Fcontent%2Fiblock%2F7b1%2Ftd6u0e7rzq9dmrmmhcbo7vnumzwiipfn%2FIMG_20220525_194106.jpg&w=1920&q=75",
     width: 120,
     height: 120,
     title: "Московский Кремль",
@@ -21,7 +21,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 3,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_3.jpg",
+    url: "https://gum.ru/images/21-4.jpg",
     width: 120,
     height: 120,
     title: "ГУМ",
@@ -30,7 +30,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 4,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_4.jpg",
+    url: "https://p2.patriarchia.ru/2017/02/11/1239368898/1.jpg",
     width: 120,
     height: 120,
     title: "Собор Казанской иконы Божией Матери",
@@ -39,7 +39,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 5,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_5.jpg",
+    url: "https://um.mos.ru/content/iblock/e9e/%D0%98%D0%B2%D0%B5%D1%80%D1%81%D0%BA%D0%B8%D0%B5%20%D0%B2%D0%BE%D1%80%D0%BE%D1%82%D0%B0.jpg",
     width: 120,
     height: 120,
     title: "Иверские (Воскресенские) ворота",
@@ -57,7 +57,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 7,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_7.jpg",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Mauzoleumlenina_%28cropped%29.jpeg/330px-Mauzoleumlenina_%28cropped%29.jpeg",
     width: 120,
     height: 120,
     title: "Мавзолей В. И. Ленина",
@@ -66,7 +66,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 8,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_8_IS.jpg",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Saint_Basil%27s_Cathedral_in_Moscow.jpg/330px-Saint_Basil%27s_Cathedral_in_Moscow.jpg",
     width: 120,
     height: 120,
     title: "Храм Василия Блаженного",
@@ -75,7 +75,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 9,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_9.jpg",
+    url: "https://cdn2.tu-tu.ru/image/pagetree_node_data/1/f7f7198a5dc7e9f98a2e98413185f83a/",
     width: 120,
     height: 120,
     title: "Никольская улица",
@@ -84,7 +84,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 10,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_10.jpg",
+    url: "https://arena-travel.by/upload/iblock/6a2/rvfraxfl05oe0qrk68kpwbi12l1x1ba6.webp",
     width: 120,
     height: 120,
     title: "Парк «Зарядье»",
@@ -93,7 +93,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 11,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_11_IS.jpg",
+    url: "https://media-cdn.tripadvisor.com/media/photo-s/13/39/95/39/caption.jpg",
     width: 120,
     height: 120,
     title: "Китай-город и улица Варварка",
@@ -102,7 +102,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 12,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_12_IS.jpg",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Moscow_TsUM_Petrovka_asv2019-06.jpg/250px-Moscow_TsUM_Petrovka_asv2019-06.jpg",
     width: 120,
     height: 120,
     title: "ЦУМ",
@@ -111,7 +111,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 13,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_13_IS.jpg",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Moscow-Bolshoi-Theare-1.jpg/330px-Moscow-Bolshoi-Theare-1.jpg",
     width: 120,
     height: 120,
     title: "Большой театр",
@@ -120,7 +120,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 14,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_14.jpg",
+    url: "https://cdn-s-static.arzamas.academy/x/119-bass-QqFwvKssCCYDK2ZmNx4zWzic/dom/img/history4.jpg",
     width: 120,
     height: 120,
     title: "Здание мэрии Москвы",
@@ -129,7 +129,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 15,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_15.jpg",
+    url: "https://www.culture.ru/s/vopros/patriarshie-prudy/images/tild6563-3663-4138-a634-663638376639__photo.jpg",
     width: 120,
     height: 120,
     title: "Патриаршие пруды",
@@ -138,7 +138,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 16,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_16.jpg",
+    url: "https://www.rsl.ru/photo/!_ORS/3-SOBYTIJA/3-plozhadki/dom-pashkova/IMG_3708-850-600.jpg",
     width: 120,
     height: 120,
     title: "Дом Пашкова",
@@ -147,7 +147,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 17,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_17.jpg",
+    url: "https://media.izi.travel/2ed2a0f1-e9a9-4d1f-b14d-0cf4bd2e4851/9a0eaaa6-0177-422f-80c5-6a361ab80c40_800x600.jpg",
     width: 120,
     height: 120,
     title: "Библиотека им. Ленина",
@@ -156,7 +156,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 18,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_18.jpg",
+    url: "https://www.megaflot.ru/upload/resize_cache/webp/iblock/a20/800_600_1/issknt1quy8ld8gi1ulym0cw9k1j1tly.webp",
     width: 120,
     height: 120,
     title: "Киностудия «МОСФИЛЬМ»",
@@ -165,7 +165,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 19,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_19_IS.jpg",
+    url: "https://www.mosflot.ru/images/prichal-patriarshiy-most/prichal-patriarshiy-most-02.jpg",
     width: 120,
     height: 120,
     title: "Храм Христа Спасителя и Патриарший мост",
@@ -174,7 +174,7 @@ export const mockCards: CardItem[] = [
   },
   {
     id: 20,
-    url: "https://незабываемая.москва/blog/dostoprimechatelnosti_moskvy_20.jpg",
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHoH0IHwpsOf47oYBksarnfYvrG6rdKbf_eQ&s",
     width: 120,
     height: 120,
     title: "Музей изобразительных искусств им. Пушкина",
